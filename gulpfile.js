@@ -2,6 +2,7 @@
  * Created by meathill on 2017/6/13.
  */
 
+const fs = require('fs');
 const gulp = require('gulp');
 const stylus = require('gulp-stylus');
 const cleanCSS = require('gulp-clean-css');
@@ -43,11 +44,13 @@ gulp.task('webpack', () => {
 });
 
 gulp.task('html', () => {
+  let baidu = fs.readFileSync('./app/baidu.js');
   return gulp.src('./index.dev.html')
     .pipe(replace(/node_modules\/([\w\-\.]+)\/(dist|build\/)?/g, (match, repo) => {
       return cdn[repo];
     }))
     .pipe(replace('dist/bundle.js', 'js/bundle.js'))
+    .pipe(replace('</body>', `<script>${baidu}</script></body>`))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(DOC));
 });
