@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>订单查询</title>
+  <meta name="keywords" content="天气宝,天气保险,订单查询">
+  <meta name="description" content="天气宝,全国第一款实现自动定价，自动赔付的天气保障,保障范围已覆盖全国300多个城市。">
+  <meta name="author" content="Meathill <meathill@gmail.com>">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+
+<div class="logo">
+  <img src="img/logo.png">
+</div>
+<form method="post" action="/deal/deal_list">
+  <div class="form-group">
+    <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="请输入手机号码" minlength="11" maxlength="12" pattern="^0?1[34578]\d{9}$" required>
+  </div>
+  <div class="form-group row">
+    <input type="text" minlength="4" maxlength="4" placeholder="请输入验证码" id="verfiycode" name="verifycode" required>
+    <button type="button" class="fetch-verify-code-button">获取验证码</button>
+  </div>
+  <div class="form-group">
+    <button>查询订单</button>
+  </div>
+</form>
+
+<div class="modal hide">
+  <div class="modal-body">
+    <i class="fa fa-times-circle-o"></i>
+    手机号码错误！
+  </div>
+</div>
+
+<footer>
+  客服微信号：tianqibao2015
+</footer>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="dist/bundle.js"></script>
+</body>
+</html>

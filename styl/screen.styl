@@ -1,0 +1,66 @@
+@import "../node_modules/normalize.css/normalize.css"
+
+html, body
+  height 100%
+
+.logo
+  padding 45px
+
+  img
+    display block
+    margin 0 auto
+    width 70px
+    height 96px
+
+form
+  padding 0 15px
+
+.form-group
+  display flex
+
+  + .form-group
+    margin-top 15px
+
+input,button
+  border-radius 4px
+  line-height 18px
+  padding 1em 0
+
+input
+  border 1px solid #DDD
+  font-size 12px
+  flex 1
+  padding 1em
+
+  &::placeholder
+    color #999
+
+button
+  border none
+  background-color #5A70EE
+  color #FFFEEE
+  font-size 16px
+
+  &[type=button]
+    font-size 10px
+    margin-left 10px
+    width 90px
+
+  &[disabled]
+    background-color #DDD
+
+  &:only-child
+    flex 1
+
+footer
+  position absolute
+  bottom 15px
+  width 100%
+  font-size 16px
+  color #666
+  text-align center
+
+.hide
+  display none !important
+
+@import "component/_modal.styl"
