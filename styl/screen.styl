@@ -3,6 +3,10 @@
 html, body
   height 100%
 
+body
+  display flex
+  flex-direction column
+
 .logo
   padding 45px
 
@@ -14,6 +18,7 @@ html, body
 
 form
   padding 0 15px
+  flex-grow 1
 
 .form-group
   display flex
@@ -53,10 +58,8 @@ button
     flex 1
 
 footer
-  position absolute
-  bottom 15px
-  width 100%
   font-size 16px
+  line-height 2.5em
   color #666
   text-align center
 
